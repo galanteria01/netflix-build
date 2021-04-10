@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import { auth } from '../firebase';
 import Nav from '../Nav';
+import PlanCard from '../PlanCard';
 import './ProfileScreen.css';
 
 const ProfileScreen = () => {
@@ -20,7 +21,10 @@ const ProfileScreen = () => {
                         <h2>{user.email}</h2>
                         <div className="profileScreen__plans">
                             <h3>Plans</h3>
-                            
+                            <h4 className="profileScreen__renewal">Renewal date: 22/03/2001</h4>
+                            <PlanCard title="Netflix Standard" quality="1080p" />
+                            <PlanCard title="Netflix Basic" quality="480p" />
+                            <PlanCard title="Netflix Premium" quality="4k+HDR" />
                             <button onClick={() => auth.signOut()} className="profileScreen__signOut">Sign Out</button>
                         </div>
                     </div>
